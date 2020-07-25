@@ -5,9 +5,7 @@ using System.Text;
 
 namespace BattleMetricsWrapper
 {
-
-
-    public class PlayerAttributes
+        public class PlayerAttributes
     {
         [JsonProperty("firstTime")]
         public bool FirstTime { get; set; }
