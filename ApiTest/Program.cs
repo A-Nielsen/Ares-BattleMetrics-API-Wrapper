@@ -14,7 +14,7 @@ namespace ApiTest
         {
             var service = new BMService();
 
-            var server = await service.GetBMServer(7018681);
+            var server = await service.GetBMServerAsync(7018681);
             Console.WriteLine(server.ToString());
         }
     }
