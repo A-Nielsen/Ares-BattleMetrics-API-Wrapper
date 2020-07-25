@@ -1,18 +1,15 @@
-﻿using BattleMetricsWrapper;
-using Newtonsoft.Json;
-using System;
-using System.Net.Http;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System;
 using System.Threading.Tasks;
+
+using BattleMetricsWrapper;
 
 namespace ApiTest
 {
-    class Program
+    internal class Program
     {
-        static async Task Main(string[] args)
+        private static async Task Main()
         {
-            var service = new BMService();
+            var service = new BattleMetricsService();
 
             var server = await service.GetBMServer(7018681);
             Console.WriteLine(server.ToString());
