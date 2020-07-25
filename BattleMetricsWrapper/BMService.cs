@@ -1,16 +1,24 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
+using Newtonsoft.Json;
+
 namespace BattleMetricsWrapper
 {
-    public class BMService
+    public class BattleMetricsService
     {
         private HttpClient bmClient = new HttpClient();
 
-        public async Task<Server> GetBMServerAsync(int serverId)
+        public BattleMetricsService()
+        {
+            BattleMetricsService.HttpClient = new HttpClient();
+            BattleMetricsService.HttpClient.DefaultRequestHeaders.ConnectionClose = true;
+        }
+
+        public async Task<Server> GetBMServerAsync(UInt32 ServerID)
         {
             try
             {
